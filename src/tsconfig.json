@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noImplicitAny": false,
+    "outDir": "wwwroot/bin",
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "rootDir": "Client",
+    "sourceMap": true,
+    "target": "es5"
+  },
+  "exclude": [
+    "bin",
+    "node_modules",
+    "obj",
+    "out",
+    "wwwroot"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "typeRoots": [
+    "node_modules/@types"
+  ]
+}
