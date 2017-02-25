@@ -2,11 +2,18 @@
 
 A successful marriage of Webpack, Angular2, and .NET Core
 
+## Requirements
+
+- .NET Core 1.0.0-rc4-004771
+- Node v.7.6.0
+
 ## Run app locally
 
 You will need Node, and .NET Core. Once you have both, run the following commands to get started:
 
 ```sh
+# Enter the webapp folder
+cd src/
 # Install NPM Dependencies
 npm install
 # Install .NET Dependencies
@@ -18,7 +25,6 @@ dotnet run
 ## Notes
 
 ### General
-- Docker supported
 - Client/ contains all the Angular 2 code
 - Server/ contains all the .NET Core code
 
