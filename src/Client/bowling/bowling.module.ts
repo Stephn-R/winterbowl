@@ -6,11 +6,8 @@ import { FormsModule }   from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { BowlingComponent } from './bowling.component';
-import { BowlingService } from './bowling.service';
-import { BowlingActions } from './bowling.actions';
-import { BowlingEpics } from './bowling.epics';
-
 import { BowlingFrameFormComponent } from './form/frame-form.component'
+import { BowlingService } from './bowling.service';
 
 import { ToasterModule } from 'angular2-toaster';
 
@@ -22,9 +19,7 @@ import { ToasterModule } from 'angular2-toaster';
     BowlingFrameFormComponent
   ],
   providers: [
-    BowlingService,
-    BowlingActions,
-    BowlingEpics
+    BowlingService
   ],
   imports: [
     CommonModule,

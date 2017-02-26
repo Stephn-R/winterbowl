@@ -4,7 +4,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ToasterService } from 'angular2-toaster';
 
-import { IBowlingFrame } from '../bowling.reducer';
+import { IBowlingFrame } from '../bowling.component';
 
 const template = require('./frame-form.html');
 
@@ -19,7 +19,7 @@ const template = require('./frame-form.html');
   styles: [require('./frame-form.styles')]
 })
 export class BowlingFrameFormComponent {
-  frame: IBowlingFrame = {};
+  frame: IBowlingFrame = { FirstRoll: null, SecondRoll: null };
   @Input('currentFrame') frameIndex: number = 0;
   @Output() onSave: EventEmitter<IBowlingFrame> = new EventEmitter<IBowlingFrame>();
 
