@@ -6,9 +6,9 @@ import { BowlingActions } from './bowling.actions';
 // ────────────────────────────────────────────────────────────────────────────────
 
 export interface IBowlingFrame {
-  FirstRoll?: Number;
-  SecondRoll?: Number;
-  ThirdRoll?: Number;
+  FirstRoll?: number;
+  SecondRoll?: number;
+  ThirdRoll?: number;
 }
 
 interface IScoreboardAction {

@@ -12,6 +12,8 @@ import { BowlingEpics } from './bowling.epics';
 
 import { BowlingFrameFormComponent } from './form/frame-form.component'
 
+import { ToasterModule } from 'angular2-toaster';
+
 // ────────────────────────────────────────────────────────────────────────────────
 
 @NgModule({
@@ -26,7 +28,9 @@ import { BowlingFrameFormComponent } from './form/frame-form.component'
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    // 3rd Party
+    ToasterModule
   ],
   exports: [ BowlingComponent ],
 })

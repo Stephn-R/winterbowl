@@ -34,7 +34,7 @@ import { AppActions } from './app.actions';
     HttpModule,
     RoutingModule,
     NgReduxModule,
-    NgReduxRouterModule,,
+    NgReduxRouterModule,
     // CUSTOM MODULES
     BowlingModule,
   ],

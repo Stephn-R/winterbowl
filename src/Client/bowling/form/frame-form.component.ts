@@ -2,6 +2,8 @@
 // MODULES
 
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { ToasterService } from 'angular2-toaster';
+
 import { IBowlingFrame } from '../bowling.reducer';
 
 const template = require('./frame-form.html');
@@ -21,7 +23,7 @@ export class BowlingFrameFormComponent {
   @Input('currentFrame') frameIndex: number = 0;
   @Output() onSave: EventEmitter<IBowlingFrame> = new EventEmitter<IBowlingFrame>();
 
-  constructor() {
+  constructor(private toasterService: ToasterService) {
     this.frame = {
       FirstRoll: null,
       SecondRoll: null,
@@ -31,7 +33,13 @@ export class BowlingFrameFormComponent {
 
   onSubmit($event: Event) {
     $event.preventDefault();
-    this.onSave.emit(this.frame);
+
+    if(this.frameIndex < 9 && (this.frame.FirstRoll + this.frame.SecondRoll > 10)) {
+      this.toasterService.pop('error', 'Bowling Frame Form:', 'Provided values are invalid. You cannot bowl more than 10 pins in two rolls.');
+    } else {
+      this.onSave.emit(this.frame);
+    }
+
   }
 }
 
