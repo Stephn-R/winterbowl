@@ -15,7 +15,7 @@ import {
 import { createEpicMiddleware, combineEpics } from 'redux-observable';
 import * as createLogger from 'redux-logger';
 
-import { homeReducer } from '../home';
+import { bowlingReducer, BowlingEpics } from '../bowling';
 import { AppActions } from './app.actions';
 
 // ────────────────────────────────────────────────────────────────────────────────
@@ -26,22 +26,25 @@ import { AppActions } from './app.actions';
 @Component({
   selector: 'app',
   template: require('./app.html'),
+  styles: [require('./app.styles')]
 })
 export class AppComponent {
   constructor(
     private ngRedux: NgRedux<any>,
     private actions: AppActions,
+    private epics: BowlingEpics,
     devTools: DevToolsExtension,
     ngReduxRouter: NgReduxRouter,
   ) {
     ngRedux.configureStore(
       combineReducers({
-        home:   homeReducer,
+        bowling: bowlingReducer,
         router: routerReducer,
       }),
       {},
       [
         createLogger(),
+        createEpicMiddleware(this.epics.score)
       ],
       devTools.isEnabled() ? [ devTools.enhancer() ] : null
     );

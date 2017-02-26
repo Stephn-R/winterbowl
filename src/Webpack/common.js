@@ -30,7 +30,7 @@ module.exports = {
     sourceMapFilename: '[name].map'
   },
   resolve: {
-    extensions: ['.js', '.ts'],
+    extensions: ['.js', '.ts', '.scss'],
     modules: ['node_modules']
   },
   module: {

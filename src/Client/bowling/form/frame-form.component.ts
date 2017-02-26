@@ -1,10 +1,10 @@
 // ────────────────────────────────────────────────────────────────────────────────
 // MODULES
 
-import { Component } from '@angular/core';
-import { select } from '@angular-redux/store';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { IBowlingFrame } from '../bowling.reducer';
 
-const template = require('./home.html');
+const template = require('./frame-form.html');
 
 // ────────────────────────────────────────────────────────────────────────────────
 
@@ -12,8 +12,27 @@ const template = require('./home.html');
 // COMPONENT
 
 @Component({
-  template
+  template,
+  selector: 'bowling-frame-form',
+  styles: [require('./frame-form.styles')]
 })
-export class HomeComponent {}
+export class BowlingFrameFormComponent {
+  frame: IBowlingFrame = {};
+  @Input('currentFrame') frameIndex: number = 0;
+  @Output() onSave: EventEmitter<IBowlingFrame> = new EventEmitter<IBowlingFrame>();
+
+  constructor() {
+    this.frame = {
+      FirstRoll: null,
+      SecondRoll: null,
+      ThirdRoll: null
+    }
+  }
+
+  onSubmit($event: Event) {
+    $event.preventDefault();
+    this.onSave.emit(this.frame);
+  }
+}
 
 // ────────────────────────────────────────────────────────────────────────────────

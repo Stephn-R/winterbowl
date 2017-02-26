@@ -7,6 +7,6 @@ import { Http } from '@angular/http';
 // ────────────────────────────────────────────────────────────────────────────────
 
 @Injectable()
-export class HomeService {
+export class BowlingService {
   constructor(private http: Http) {}
 }

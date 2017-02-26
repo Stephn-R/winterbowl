@@ -5,13 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 // ────────────────────────────────────────────────────────────────────────────────
 
-import { HomeComponent } from '../home';
+import { BowlingComponent } from '../bowling';
 
 // ────────────────────────────────────────────────────────────────────────────────
 // ROUTES
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: BowlingComponent },
 ];
 
 export const RoutingProviders: any[] = [

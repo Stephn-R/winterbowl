@@ -31,10 +31,12 @@ dotnet run
 ### Server
 - Webpack Middleware is used to compile the code live in dev mode
 - Beautiful [error page](http://localhost:5000/Home/Error)
+- TBD: Swagger API docs
 
 ### Client
 - This application does not use the SystemJS implementation of Angular 2
 - Implemented Angular2 using typescript, redux, redux-router, and more.
-- Using Webpack 2
+- Webpack 2
+- Bootstrap
 
 Direct all questions via email to -> [Stephen Rodriguez](mailto:steprodriguez10@gmail.com)

@@ -16,6 +16,7 @@ export function main(): Promise<any> {
   .catch(err => console.error(err));
 }
 
+// PRODUCTION SETTINGS
 if(process.env.NODE_ENV === 'production') {
   enableProdMode();
 }

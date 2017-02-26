@@ -2,21 +2,32 @@
 // MODULES
 
 import { NgModule } from '@angular/core'
+import { FormsModule }   from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { HomeComponent } from './home.component';
-import { HomeService } from './home.service';
-import { HomeActions } from './home.actions';
+import { BowlingComponent } from './bowling.component';
+import { BowlingService } from './bowling.service';
+import { BowlingActions } from './bowling.actions';
+import { BowlingEpics } from './bowling.epics';
+
+import { BowlingFrameFormComponent } from './form/frame-form.component'
 
 // ────────────────────────────────────────────────────────────────────────────────
 
 @NgModule({
-  declarations: [ HomeComponent ],
-  providers: [
-    HomeService,
-    HomeActions,
+  declarations: [
+    BowlingComponent,
+    BowlingFrameFormComponent
   ],
-  imports: [ CommonModule ],
-  exports: [ HomeComponent ],
+  providers: [
+    BowlingService,
+    BowlingActions,
+    BowlingEpics
+  ],
+  imports: [
+    CommonModule,
+    FormsModule
+  ],
+  exports: [ BowlingComponent ],
 })
-export class HomeModule {}
+export class BowlingModule {}

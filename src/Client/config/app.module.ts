@@ -4,6 +4,7 @@
 import { BrowserModule  } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ApplicationRef, NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { NgReduxModule, NgRedux } from '@angular-redux/store';
 import { NgReduxRouterModule } from '@angular-redux/router';
@@ -14,7 +15,7 @@ import { AppComponent }   from './app.component';
 import { RoutingModule } from './app.routing';
 
 import {
-  HomeModule
+  BowlingModule
 } from './modules.barrel';
 
 import { AppActions } from './app.actions';
@@ -30,11 +31,12 @@ import { AppActions } from './app.actions';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     RoutingModule,
     NgReduxModule,
-    NgReduxRouterModule,
+    NgReduxRouterModule,,
     // CUSTOM MODULES
-    HomeModule,
+    BowlingModule,
   ],
 
   providers: [ AppActions ],

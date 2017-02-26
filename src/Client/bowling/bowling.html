@@ -1,0 +1,34 @@
+<div class="container-fluid wrapper">
+	<div class="container scoreboard animated flipInX">
+		<div class="row header">
+			<div class="col-md-10 col-xs-10">Winter Bowling Score Card</div>
+			<div (click)="restartFrames()" class="refresh col-md-2 col-xs-2" [ngClass]="{ 'spin': loading }"><span class="glyphicon glyphicon-refresh"></span></div>
+		</div>
+		<!--#REGION FRAMES HEADER-->
+		<div class="row sub-header">
+			<div *ngFor="let s of scores; let i = index;" [ngClass]="{
+				'col-md-offset-1':   (i === 0),
+				'col-md-2 col-xs-2': (i === scores.length-1),
+				'col-md-1 col-xs-1': (i >= 0 && i < scores.length-1)
+			}">{{ i+1 }}</div>
+		</div>
+		<!--#ENDREGION-->
+		<!--#REGION FRAMES-->
+		<div class="row scores">
+			<div class="col-md-1 col-xs-1 name">P1</div>
+
+			<div *ngFor="let score of scores; let i = index" class="frame" [ngClass]="{
+				'col-md-1 col-xs-1': (i >= 0 && i < scores.length-1),
+				'col-md-2 col-xs-2': (i === scores.length-1),
+				'active':            (i === activeFrame)
+			}">
+				<div class="first-roll">{{ score.FirstRoll }}</div>
+				<div class="second-roll">{{ score.SecondRoll }}</div>
+				<div *ngIf="i === scores.length-1" class="third-roll">{{ score.ThirdRoll }}</div>
+				<div class="score">120</div>
+			</div>
+		</div>
+		<!--#ENDREGION-->
+	</div>
+	<bowling-frame-form [currentFrame]="activeFrame" (onSave)="saveFrame($event)"></bowling-frame-form>
+</div>
