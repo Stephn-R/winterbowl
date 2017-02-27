@@ -19,14 +19,5 @@ module.exports = merge(common, {
       title: 'Webpack Bundler',
       alwaysNotify: true,
     }),
-  ],
-  stats: {
-    warnings: false
-  },
-  devServer: {
-    contentBase: path.resolve(__dirname, '..', 'bin'),
-    historyApiFallback: true,
-    compress: true,
-    port: 9000
-  }
+  ]
 });

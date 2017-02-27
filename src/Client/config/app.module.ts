@@ -6,14 +6,9 @@ import { FormsModule } from '@angular/forms';
 import { ApplicationRef, NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
-import * as createLogger from 'redux-logger';
+import { AppComponent, RoutingModule } from './';
 
-import { AppComponent }   from './app.component';
-import { RoutingModule } from './app.routing';
-
-import {
-  BowlingModule
-} from './modules.barrel';
+import { BowlingModule } from './modules.barrel';
 
 // ────────────────────────────────────────────────────────────────────────────────
 // APP MODULE

@@ -20,7 +20,7 @@ namespace Winter_Bowl.Controllers
         {
             // 1. Validate the frames
             if(!scoreboard.FramesValid()) return BadRequest("The provided scores are not valid");
-            // 2. Calculate the score
+            // 2. Calculate the score (default: 0)
             return (scoreboard.frames.Length > 0) ? Json(scoreboard.CalculateScore()) : Json(0);
         }
     }

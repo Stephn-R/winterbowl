@@ -1,7 +1,6 @@
 // ────────────────────────────────────────────────────────────────────────────────
-// BOWLING BARREL
+// APP BARREL
 
-export * from './bowling.component';
-export * from './bowling.module';
-export * from './bowling.service';
-export * from './form/frame-form.component';
+export * from './app.component';
+export * from './app.module';
+export * from './app.routing';

@@ -7,9 +7,9 @@ namespace Winter_Bowl.Models
     {
         #region MEMBERS
 
-        public int FirstRoll { get; set; }
-        public int SecondRoll { get; set; }
-        public int ThirdRoll { get; set; }
+        public int FirstRoll { get; set; } = 0;
+        public int SecondRoll { get; set; } = 0;
+        public int ThirdRoll { get; set; } = 0;
 
         #endregion
 
@@ -19,43 +19,31 @@ namespace Winter_Bowl.Models
         /// Checks if a strike was thrown in the first two rolls
         /// </summary>
         /// <returns>a strike was thrown</returns>
-        public bool HasStrike()
-        {
-            return (FirstRoll == 10);
-        }
+        public bool HasStrike() => (FirstRoll == 10);
 
         /// <summary>
         /// Checks if a spare was thrown
         /// </summary>
         /// <returns>a spare was thrown in the first two rolls</returns>
-        public bool HasSpare()
-        {
-            return (
-                (FirstRoll + SecondRoll == 10) &&
-                (FirstRoll < 10)
-            );
-        }
+        public bool HasSpare() => (
+            (FirstRoll + SecondRoll == 10) &&
+            (FirstRoll < 10)
+        );
 
         /// <summary>
         /// Validates the inputs of the first two rolls
         /// </summary>
         /// <returns>the first two rolls are valid</returns>
-        public bool ValidFrame()
-        {
-            return (
-                (FirstRoll >= 0 && SecondRoll >= 0) &&
-                (FirstRoll <= 10 && SecondRoll <= 10)
-            );
-        }
+        public bool ValidFrame() => (
+            (FirstRoll >= 0 && SecondRoll >= 0) &&
+            (FirstRoll <= 10 && SecondRoll <= 10)
+        );
 
         /// <summary>
         /// Calculates the simple score of the frame
         /// </summary>
         /// <returns>the sum total points of the rolls</returns>
-        public int CalculateScore()
-        {
-            return (FirstRoll + SecondRoll);
-        }
+        public int CalculateScore() => (FirstRoll + SecondRoll);
 
         #endregion
     }

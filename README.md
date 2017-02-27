@@ -1,15 +1,15 @@
-# Angular2 using .NET Core v1.1.0
+# Winter Bowl
 
-A successful marriage of Webpack, Angular2, and .NET Core
+An awesome made for keeping track of your bowling score!!! and a successful marriage of Webpack, Angular2, and .NET Core
 
 ## Requirements
 
 - .NET Core 1.0.0-rc4-004771
-- Node v.7.6.0
+- Node v7.6.0
 
 ## Run app locally
 
-You will need Node, and .NET Core. Once you have both, run the following commands to get started:
+After satisfying the requirements above, run the following commands to get started:
 
 ```sh
 # Enter the webapp folder
@@ -18,25 +18,34 @@ cd src/
 npm install
 # Install .NET Dependencies
 dotnet restore
-# Run the web application
+# Run the web application (localhost:5000 by default)
 dotnet run
 ```
+
+## Pages to visit:
+
+- [Bowling ScoreCard](http://localhost:5000/#/)
+- [Error Page](http://localhost:5000/Home/Error)
 
 ## Notes
 
 ### General
-- Client/ contains all the Angular 2 code
-- Server/ contains all the .NET Core code
+- src/Client/ contains all the Angular 2 code
+- src/Server/ contains all the .NET Core code
+- All the code has been neatly commented for easy readability
 
 ### Server
 - Webpack Middleware is used to compile the code live in dev mode
-- Beautiful [error page](http://localhost:5000/Home/Error)
-- TBD: Swagger API docs
+- Server utilizes new C# 6.0 concepts such as Expression Bodies and auto-properties
+- Server Endpoints follow the Commander Design Pattern for simplying execution
 
 ### Client
-- This application does not use the SystemJS implementation of Angular 2
-- Implemented Angular2 using typescript, redux, redux-router, and more.
-- Webpack 2
-- Bootstrap
+- This application does not use the SystemJS implementation of Angular 2 (:innocent:)
+- Implemented Angular2 using typescript, bootstrap, and angular-toaster.
+- Bundles code using Webpack 2 + Typescript helpers
+- All stylesheets are compiled from Sass through PostCSS to add autoprefixings, and then are converted to strings
+- All stylesheets apply directly to their components and do not "bleed" into other components
+- Barreling and Angular Modules are just a few of the things done to improve code management (Read more: [Angular 2 Styles and File Structure by John Papa](https://johnpapa.net/angular-2-styles/))
+- The Angular2 code also adheres to the [SOLID Patterns](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design)
 
 Direct all questions via email to -> [Stephen Rodriguez](mailto:steprodriguez10@gmail.com)

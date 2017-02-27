@@ -15,7 +15,7 @@
 		<!--#ENDREGION-->
 		<!--#REGION FRAMES-->
 		<div class="row frames">
-			<div class="col-md-1 col-xs-1 name">P1</div>
+			<div class="col-md-1 col-xs-1 name">Player 1</div>
 
 			<div *ngFor="let f of frames; let i = index" class="frame" [ngClass]="{
 				'col-md-1 col-xs-1': (i >= 0 && i < frames.length-1),
@@ -25,12 +25,12 @@
 				<div class="first-roll">{{ displayValue(f, 1) }}</div>
 				<div class="second-roll">{{ displayValue(f, 2) }}</div>
 				<div class="third-roll">{{ displayValue(f, 3) }}</div>
-				<div class="score">{{ f.Score }}</div>
+				<div class="score">{{ displayScore(f, i) }}</div>
 			</div>
 		</div>
 		<!--#ENDREGION-->
 	</div>
-	<bowling-frame-form [currentFrame]="activeFrame" (onSave)="saveFrame($event)"></bowling-frame-form>
+	<bowling-frame-form [frame]="frameForm" [currentFrame]="activeFrame" (onSave)="saveFrame($event)"></bowling-frame-form>
 </div>
 
 <toaster-container></toaster-container>

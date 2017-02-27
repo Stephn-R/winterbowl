@@ -4,7 +4,6 @@
 
 const path = require('path');
 const webpack = require('webpack');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /*= End of MODULES =*/
 /*=============================================<<<<<*/
@@ -30,7 +29,7 @@ module.exports = {
     sourceMapFilename: '[name].map'
   },
   resolve: {
-    extensions: ['.js', '.ts', '.scss'],
+    extensions: ['.js', '.ts', '.scss', '.html'],
     modules: ['node_modules']
   },
   module: {

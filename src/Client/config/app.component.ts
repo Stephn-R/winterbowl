@@ -1,7 +1,10 @@
 // ────────────────────────────────────────────────────────────────────────────────
 // MODULES
 
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
+
+const template = require('./app.html');
+const styles = [require('./app.styles')];
 
 // ────────────────────────────────────────────────────────────────────────────────
 
@@ -10,11 +13,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app',
-  template: require('./app.html'),
-  styles: [require('./app.styles')]
+  template,
+  styles
 })
-export class AppComponent {
-  constructor() {}
-}
+export class AppComponent {}
 
-/*=====  End of APP COMPONENT  ======*/
+// ────────────────────────────────────────────────────────────────────────────────

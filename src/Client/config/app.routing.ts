@@ -2,9 +2,6 @@
 // MODULES
 
 import { Routes, RouterModule } from '@angular/router';
-
-// ────────────────────────────────────────────────────────────────────────────────
-
 import { BowlingComponent } from '../bowling';
 
 // ────────────────────────────────────────────────────────────────────────────────
@@ -12,10 +9,7 @@ import { BowlingComponent } from '../bowling';
 
 const appRoutes: Routes = [
   { path: '', component: BowlingComponent },
-];
-
-export const RoutingProviders: any[] = [
-  // bootstrap providers
+  { path: '**', redirectTo: '' }
 ];
 
 export const RoutingModule = RouterModule.forRoot(appRoutes, { useHash: true });

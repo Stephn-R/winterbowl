@@ -52,7 +52,7 @@ namespace Winter_Bowl.Models
             // Zero out an array
             int[] score = Enumerable.Repeat(0, frames.Length).ToArray();
 
-            // Calculate final frame first so we can compute the other frames
+            // Calculate final frame first so we can compute the other frame's scores
             Frame f = frames[frames.Length-1];
             if(f.HasStrike() && f.SecondRoll == 10) score[frames.Length-1] = f.CalculateScore() + f.ThirdRoll;
             else score[frames.Length-1] = f.CalculateScore();
@@ -67,7 +67,7 @@ namespace Winter_Bowl.Models
                 if(curr.HasStrike() && next.HasStrike()) score[i] = 30;
                 // Spare Frames
                 else if(curr.HasSpare() && next.HasStrike()) score[i] = 20;
-                // TIP: If following frame has a spare
+                // If following frame has a spare
                 else if(
                     (curr.HasSpare() && next.HasSpare()) ||
                     (curr.HasStrike() && next.HasSpare())

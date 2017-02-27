@@ -4,23 +4,26 @@
 import { NgModule } from '@angular/core'
 import { FormsModule }   from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ToasterModule } from 'angular2-toaster';
 
 import { BowlingComponent } from './bowling.component';
 import { BowlingFrameFormComponent } from './form/frame-form.component'
 import { BowlingService } from './bowling.service';
 
-import { ToasterModule } from 'angular2-toaster';
-
 // ────────────────────────────────────────────────────────────────────────────────
 
+/**
+ * Bowling Route Module
+ *
+ * @export
+ * @class BowlingModule
+ */
 @NgModule({
   declarations: [
     BowlingComponent,
     BowlingFrameFormComponent
   ],
-  providers: [
-    BowlingService
-  ],
+  providers: [ BowlingService ],
   imports: [
     CommonModule,
     FormsModule,

@@ -1,11 +1,23 @@
-$SCORECARD_BG: #F2F2F2;
-$SCORECARD_SHADOW: rgba(#000, 0.25);
-$SCORECARD_BORDER: #0D47A1;
-$SCORECARD_FRAME_BORDER: 1px solid opacify(#000, 0.75);
-$SCORECARD_NAME_BG: #25354B;
-$SCORECARD_FRAME_ACTIVE_BG: #AED581;
+// ############################################################
+
+// DIMENSIONS
+$WIDTH: 85%;
+$HEIGHT: 175px;
+$HEADER_HEIGHT: 50px;
+
+$FRAMES_HEIGHT: ($HEIGHT - ($HEADER_HEIGHT*2));
+
+// COLORS
+$BG: #F2F2F2;
+$BORDER: #0D47A1;
+$FRAME_ACTIVE_BG: #AED581;
+$FRAME_BORDER: 1px solid opacify(#000, 0.75);
+$NAME_BG: #25354B;
+$SHADOW: 0px 5px 15px 0  rgba(#000, 0.25);
 
 $ICON_SPIN_ANIMATION: spinIcon 2.5s linear forwards;
+
+// ############################################################
 
 .wrapper {
   height: 100%;
@@ -13,35 +25,37 @@ $ICON_SPIN_ANIMATION: spinIcon 2.5s linear forwards;
 
 .refresh {
   cursor: pointer;
+  position: relative;
+  top: 2px;
   text-align: right;
   &.spin .glyphicon { animation: spinIcon 1s linear forwards; }
 }
 
 .scoreboard {
-  width: 85%;
-  height: 175px;
+  width: $WIDTH;
+  height: $HEIGHT;
   margin: 10% auto 0;
-  background: $SCORECARD_BG;
-  border: 2px solid $SCORECARD_BORDER;
+  background: $BG;
+  border: 2px solid $BORDER;
   border-radius: 5px;
-  box-shadow: 0px 5px 15px 0 $SCORECARD_SHADOW;
+  box-shadow: $SHADOW;
   overflow: hidden;
 
   .header {
-    height: 50px;
+    height: $HEADER_HEIGHT;
     color: white;
-    line-height: 45px;
+    line-height: $HEADER_HEIGHT - 5px;
     padding-left: 15px;
-    background: $SCORECARD_BORDER;
+    background: $BORDER;
     font-family: "Bungee", sans-serif;
   }
 
   .sub-header {
-    height: 50px;
-    line-height: 50px;
+    height: $HEADER_HEIGHT;
+    line-height: $HEADER_HEIGHT;
     color: lighten(#000, 15%);
     font-family: "Bungee", sans-serif;
-    background: lighten($SCORECARD_BORDER, 50%);
+    background: lighten($BORDER, 50%);
     border-bottom: dotted 1px opacify(#000, 0.15);
 
     & > div {
@@ -51,24 +65,25 @@ $ICON_SPIN_ANIMATION: spinIcon 2.5s linear forwards;
   }
 
   .frames {
-    height: 70px;
-    line-height: 71px;
+    height: $FRAMES_HEIGHT;
+    height: $FRAMES_HEIGHT;
+    line-height: $FRAMES_HEIGHT + 1px;
     font-weight: bold;
 
     .name {
       color: white;
-      background: $SCORECARD_NAME_BG;
+      background: $NAME_BG;
     }
 
     .frame {
       position: relative;
       padding: 0;
-      height: 71px;
-      line-height: 25px;
-      border-left: $SCORECARD_FRAME_BORDER;
+      height: $FRAMES_HEIGHT + 1px;
+      line-height: $HEADER_HEIGHT/2;
+      border-left: $FRAME_BORDER;
 
       &.active {
-        background-color: $SCORECARD_FRAME_ACTIVE_BG !important;
+        background-color: $FRAME_ACTIVE_BG !important;
       }
 
       .first-roll {
@@ -82,8 +97,8 @@ $ICON_SPIN_ANIMATION: spinIcon 2.5s linear forwards;
         width: 45%;
         height: 45%;
         text-align: center;
-        border-left: $SCORECARD_FRAME_BORDER;
-        border-bottom: $SCORECARD_FRAME_BORDER;
+        border-left: $FRAME_BORDER;
+        border-bottom: $FRAME_BORDER;
       }
 
       .score {
@@ -102,9 +117,9 @@ $ICON_SPIN_ANIMATION: spinIcon 2.5s linear forwards;
         .second-roll { right: 30%; }
         .second-roll, .third-roll { width: 30%; }
       }
-    }
-  }
-}
+    } // .frame
+  } // .frames
+} // .scoreboard
 
 @keyframes spinIcon {
   from { transform: rotate(0deg); }
