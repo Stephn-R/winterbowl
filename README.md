@@ -67,3 +67,14 @@ docker run -it --rm winter-bowl
 - The Angular2 code also adheres to the [SOLID Patterns](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design)
 
 Direct all questions via email to -> [Stephen Rodriguez](mailto:steprodriguez10@gmail.com)
+
+## Looking Forward
+
+If given additional time to continune building this project, I would envision doing the following:
+
+- Add a CI tool like Circle CI, Jenkins, or Teamcity
+- Write tests for the .NET Core Endpoints and the Angular2 code
+- Run a DEV, QA, and PROD server for proper application pipelining
+- Begin using Git Flow for better source control tree management
+- Add linting tools to enforce code styling amongst multiple devs
+- and so much more... :smile:
