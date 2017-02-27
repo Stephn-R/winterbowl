@@ -2,7 +2,7 @@
 
 An awesome made for keeping track of your bowling score!!! and a successful marriage of Webpack, Angular2, and .NET Core
 
-![Winter Bowl]()
+![Winter Bowl](https://github.com/Stephn-R/winterbowl/blob/master/winterbowl.png)
 
 ## Requirements
 
