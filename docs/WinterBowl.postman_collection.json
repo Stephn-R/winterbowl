@@ -1,0 +1,31 @@
+{
+	"variables": [],
+	"info": {
+		"name": "APSIS",
+		"_postman_id": "ea44b69b-3f00-ec56-7f60-64c8698bbf50",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Score Frame",
+			"request": {
+				"url": "{{host}}/api/bowling/score",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"frames\": [\n\t\t{\n\t\t\t\"FirstRoll\": 10,\n\t\t\t\"SecondRoll\": 0,\n\t\t\t\"ThirdRoll\": 0\n\t\t}\n\t]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
