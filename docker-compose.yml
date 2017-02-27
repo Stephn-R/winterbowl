@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+   core:
+     build:
+        context: .
+     container_name: 'winter-bowl'
+     ports:
+       - "5000:80"
+     restart: always
+     environment:
+       ASPNETCORE_ENVIRONMENT: development

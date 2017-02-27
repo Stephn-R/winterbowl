@@ -22,6 +22,24 @@ dotnet restore
 dotnet run
 ```
 
+## Run using Docker Composer
+
+```sh
+# Prepare the image network
+docker-compose build
+# Run the image
+docker-compose up
+```
+
+## Run using Docker
+
+```sh
+# Prepare the image
+docker build -t winter-bowl .
+# Run the image
+docker run -it --rm winter-bowl
+```
+
 ## Pages to visit:
 
 - [Bowling ScoreCard](http://localhost:5000/#/)

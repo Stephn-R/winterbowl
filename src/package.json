@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "Client/main.browser.ts",
-  "scripts": {
-    "prebuild": "dotnet restore",
-    "build": "dotnet publish -c Release -o bin/Release/PublishOutput"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Stephn-R/winterbowl.git"
