@@ -53,6 +53,7 @@ docker run -it --rm winter-bowl
 - src/Client/ contains all the Angular 2 code
 - src/Server/ contains all the .NET Core code
 - All the code has been neatly commented for easy readability
+- A Postman Collection was provided via the docs/ folder for testing the API
 
 ### Server
 - Webpack Middleware is used to compile the code live in dev mode
