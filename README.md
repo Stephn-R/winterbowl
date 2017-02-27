@@ -2,6 +2,8 @@
 
 An awesome made for keeping track of your bowling score!!! and a successful marriage of Webpack, Angular2, and .NET Core
 
+![Winter Bowl]()
+
 ## Requirements
 
 - .NET Core 1.0.0-rc4-004771
