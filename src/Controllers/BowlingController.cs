@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.Mvc;
-using Winter_Bowl.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using src.Models;
 
-namespace Winter_Bowl.Controllers
+namespace src.Controllers
 {
     /// <summary>
     /// Bowling API Controller

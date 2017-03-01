@@ -1,4 +1,4 @@
-namespace Winter_Bowl.Models
+﻿namespace src.Models
 {
     /// <summary>
     /// Model representing a Bowling Frame
@@ -10,6 +10,12 @@ namespace Winter_Bowl.Models
         public int FirstRoll { get; set; } = 0;
         public int SecondRoll { get; set; } = 0;
         public int ThirdRoll { get; set; } = 0;
+
+        #endregion
+
+        #region CONSTRUCTOR
+
+        public Frame() {}
 
         #endregion
 

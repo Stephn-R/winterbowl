@@ -1,6 +1,6 @@
-using System.Linq;
+﻿using System.Linq;
 
-namespace Winter_Bowl.Models
+namespace src.Models
 {
     /// <summary>
     /// Model representing a Bowling Scoreboard
@@ -14,6 +14,12 @@ namespace Winter_Bowl.Models
         /// </summary>
         /// <returns>the frames bowled</returns>
         public Frame[] frames { get; set; }
+
+        #endregion
+
+        #region CONSTRUCTORS
+
+        public Scoreboard() {}
 
         #endregion
 

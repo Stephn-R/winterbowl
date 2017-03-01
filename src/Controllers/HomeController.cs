@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Winter_Bowl.Controllers
+namespace src.Controllers
 {
     /// <summary>
     /// Home Web Controller
