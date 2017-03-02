@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Winter_Bowl
 {
@@ -42,6 +43,11 @@ namespace Winter_Bowl
             services.AddMvc();
             // Use memory caching
             services.AddMemoryCache();
+			// Swagger
+			services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Bowling API", Version = "v1" });
+            });
         }
 
         /// <summary>
@@ -63,6 +69,12 @@ namespace Winter_Bowl
                 app.UseDeveloperExceptionPage();
                 // Runs a webpack dev server in middleware to compile on the fly
                 app.UseWebpackDevMiddleware();
+                // Open Swagger in Dev Mode
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Bowling API v1");
+                });
             }
             else
             {
