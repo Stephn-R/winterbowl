@@ -42,15 +42,11 @@ docker build -t winter-bowl .
 docker run -it --rm winter-bowl
 ```
 
-## Run Protractor tests
+## Run Karma tests
 
-Before running these tests, you will need to follow the [startup tutorial](http://www.protractortest.org/#/tutorial) for Protractor to have you environment setup with a Selenium WebDriver.
-
-Afterwards, run the following inside the `src/` directory:
+Everything is all wired up and "Webpackerized". So all you to do is the following:
 
 ```sh
-# Begin this in a seperate shell
-npm run selenium
 # Run the tests with the following command
 npm test
 ```
