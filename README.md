@@ -55,6 +55,7 @@ npm test
 
 - [Bowling ScoreCard](http://localhost:5000/#/)
 - [Error Page](http://localhost:5000/Home/Error)
+- [Swagger Docs](http://localhost:5000/swagger)
 
 ## Notes
 
