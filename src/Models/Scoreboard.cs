@@ -13,7 +13,7 @@ namespace src.Models
         /// The Bowling Frames
         /// </summary>
         /// <returns>the frames bowled</returns>
-        public Frame[] frames { get; set; }
+        public Frame[] Frames { get; set; }
 
         #endregion
 
@@ -35,13 +35,13 @@ namespace src.Models
             bool validFrames = true;
             bool validFinalFrame = true;
 
-            for(int i = 0; i < frames.Length; i++)
+            for(int i = 0; i < Frames.Length; i++)
             {
                 // Validate each bowling frame for input values
-                validFrames = validFrames ? frames[i].ValidFrame() : false;
+                validFrames = validFrames ? Frames[i].ValidFrame() : false;
 
                 // Validate if only the last frame is a valid final frame
-                if(frames[i].ThirdRoll > 0 && i < frames.Length-1) validFinalFrame = false;
+                if(Frames[i].ThirdRoll > 0 && i < Frames.Length-1) validFinalFrame = false;
                 // Break if anything reported false
                 if(!validFrames && !validFinalFrame) break;
             }
@@ -56,18 +56,18 @@ namespace src.Models
         public int CalculateScore()
         {
             // Zero out an array
-            int[] score = Enumerable.Repeat(0, frames.Length).ToArray();
+            int[] score = Enumerable.Repeat(0, Frames.Length).ToArray();
 
             // Calculate final frame first so we can compute the other frame's scores
-            Frame f = frames[frames.Length-1];
-            if(f.HasStrike() && f.SecondRoll == 10) score[frames.Length-1] = f.CalculateScore() + f.ThirdRoll;
-            else score[frames.Length-1] = f.CalculateScore();
+            Frame f = Frames[Frames.Length-1];
+            if(f.HasStrike() && f.SecondRoll == 10) score[Frames.Length-1] = f.CalculateScore() + f.ThirdRoll;
+            else score[Frames.Length-1] = f.CalculateScore();
 
             // Calculate score for all frames in reverse order (starting from second to last)
-            for(int i = frames.Length-2; i >= 0; i--)
+            for(int i = Frames.Length-2; i >= 0; i--)
             {
-                Frame curr = frames[i];
-                Frame next = frames[i+1];
+                Frame curr = Frames[i];
+                Frame next = Frames[i+1];
 
                 // Pair of Strikes
                 if(curr.HasStrike() && next.HasStrike()) score[i] = 30;

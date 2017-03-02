@@ -51,6 +51,12 @@
         /// <returns>the sum total points of the rolls</returns>
         public int CalculateScore() => (FirstRoll + SecondRoll);
 
+        /// <summary>
+        /// Calculates the total score of all rolls in the frame
+        /// </summary>
+        /// <returns>the sum total points of all rolls in the frame</returns>
+        public int CalculateTotalScore() => (FirstRoll + SecondRoll + ThirdRoll);
+
         #endregion
     }
 }

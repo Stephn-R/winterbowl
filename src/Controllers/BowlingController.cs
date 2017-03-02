@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using src.Models;
 
 namespace src.Controllers
@@ -19,9 +20,9 @@ namespace src.Controllers
         public IActionResult CalculateScore([FromBody]Scoreboard scoreboard)
         {
             // 1. Validate the frames
-            if(!scoreboard.FramesValid()) return BadRequest("The provided scores are not valid");
+            if (!scoreboard.FramesValid()) return BadRequest("The provided scores are not valid");
             // 2. Calculate the score (default: 0)
-            return (scoreboard.frames.Length > 0) ? Json(scoreboard.CalculateScore()) : Json(0);
+            else return (scoreboard.Frames.Length > 0) ? Json(scoreboard.CalculateScore()) : Json(0);
         }
     }
 }
