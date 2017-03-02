@@ -42,6 +42,19 @@ docker build -t winter-bowl .
 docker run -it --rm winter-bowl
 ```
 
+## Run Protractor tests
+
+Before running these tests, you will need to follow the [startup tutorial](http://www.protractortest.org/#/tutorial) for Protractor to have you environment setup with a Selenium WebDriver.
+
+Afterwards, run the following inside the `src/` directory:
+
+```sh
+# Begin this in a seperate shell
+npm run selenium
+# Run the tests with the following command
+npm test
+```
+
 ## Pages to visit:
 
 - [Bowling ScoreCard](http://localhost:5000/#/)

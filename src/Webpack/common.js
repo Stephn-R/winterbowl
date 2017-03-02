@@ -42,6 +42,13 @@ module.exports = {
         exclude: /(node_modules)/,
       },
       {
+        test: /\.js$/,
+        use: [
+          'babel-loader',
+        ],
+        exclude: /(node_modules)/,
+      },
+      {
         test: /\.(sass|scss)$/,
         use: [
           'css-to-string-loader',
@@ -67,9 +74,6 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.ASPNETCORE_ENVIRONMENT),
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['polyfills', 'vendors'].reverse(),
     }),
     // HOT FIX FOR WEIRD WARNINGS ON DEV SERVER
     new webpack.ContextReplacementPlugin(
