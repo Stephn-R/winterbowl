@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using src.Models;
-using src.Test.Helpers;
 
 namespace src.Test.Helpers
 {

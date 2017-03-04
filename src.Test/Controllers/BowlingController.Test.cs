@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using src.Controllers;
 using src.Test.Helpers;
 using Xunit;
