@@ -21,7 +21,8 @@
     "node_modules",
     "obj",
     "out",
-    "wwwroot"
+    "wwwroot",
+    "**/*.spec.ts"
   ],
   "compileOnSave": false,
   "buildOnSave": false,
