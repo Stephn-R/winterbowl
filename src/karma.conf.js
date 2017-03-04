@@ -18,6 +18,9 @@ module.exports = function(config) {
     reporters: ['mocha', 'karma-typescript'],
 
     karmaTypescriptConfig: {
+      coverageOptions: {
+        exclude: /\.(d|spec|test|browser)\.ts/
+      },
       reports: {
         html: 'Coverage'
       }
