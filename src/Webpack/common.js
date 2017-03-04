@@ -42,6 +42,13 @@ module.exports = {
         exclude: /(node_modules)/,
       },
       {
+        test: /\.spec\.ts$/,
+        use: [
+          'null-loader',
+        ],
+        exclude: /(node_modules)/,
+      },
+      {
         test: /\.js$/,
         use: [
           'babel-loader',
