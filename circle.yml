@@ -1,3 +1,7 @@
+general:
+  artifacts:
+    - "src/Coverage"
+
 machine:
   services:
     - docker
