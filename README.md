@@ -64,6 +64,8 @@ npm test
 - src/Server/ contains all the .NET Core code
 - All the code has been neatly commented for easy readability
 - A Postman Collection was provided via the docs/ folder for testing the API
+- Circle CI integration for validating the Docker builds and running tests to retrieve artifacts
+- KarmaJS testing the AngularJS code and providing coverage reports
 
 ### Server
 - Webpack Middleware is used to compile the code live in dev mode
@@ -85,9 +87,6 @@ Direct all questions via email to -> [Stephen Rodriguez](mailto:steprodriguez10@
 
 If given additional time to continune building this project, I would envision doing the following:
 
-- Add a CI tool like Circle CI, Jenkins, or Teamcity
-- Write tests for the .NET Core Endpoints and the Angular2 code
-- Run a DEV, QA, and PROD server for proper application pipelining
 - Begin using Git Flow for better source control tree management
 - Add linting tools to enforce code styling amongst multiple devs
 - and so much more... :smile:
