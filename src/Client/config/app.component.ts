@@ -4,7 +4,7 @@
 import { Component } from '@angular/core';
 
 const template = require('./app.html');
-const styles = [require('./app.styles')];
+const styles = [require('./app.styles.scss')];
 
 // ────────────────────────────────────────────────────────────────────────────────
 

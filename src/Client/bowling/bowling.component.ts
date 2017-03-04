@@ -6,7 +6,7 @@ import { ToasterService } from 'angular2-toaster';
 import { BowlingService } from './bowling.service';
 
 const template = require('./bowling.html');
-const styles = [require('./bowling.styles')];
+const styles = [require('./bowling.styles.scss')];
 
 // ────────────────────────────────────────────────────────────────────────────────
 // COMPONENT

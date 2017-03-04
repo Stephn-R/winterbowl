@@ -1,53 +1,44 @@
-const webpackConfig = require('./Webpack/staging');
-
-webpackConfig.devtool = 'inline-source-map';
-
 module.exports = function(config) {
   config.set({
 
     basePath: '',
 
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'karma-typescript'],
 
     files: [
-      './Client/test/tests.entry.js'
+      'Client/test/tests.entry.ts',
+      {pattern: 'Client/**/*!(spec).ts'},
+      {pattern: 'Client/**/*.spec.ts'}
     ],
 
     preprocessors: {
-      './Client/test/tests.entry.js': ['webpack', 'sourcemap'],
-      './Client/**/*!(spec).ts': ['coverage']
+      '**/*.ts': ['karma-typescript']
     },
 
-    webpack: webpackConfig,
+    reporters: ['mocha', 'karma-typescript'],
 
-    webpackMiddleware: {},
-
-    reporters: ['mocha', 'coverage', 'karma-remap-istanbul'],
+    karmaTypescriptConfig: {
+      reports: {
+        html: 'Coverage'
+      }
+    },
 
     port: 9876,
 
     colors: true,
 
-    logLevel: config.LOG_INFO,
+    singleRun: true,
 
-    autoWatch: false,
+    logLevel: config.LOG_INFO,
 
     browsers: ['Chrome'],
 
-    singleRun: true,
-
-    coverageReporter: {
-      type: 'in-memory'
-    },
-
-    remapIstanbulReporter: {
-      remapOptions: {},
-      reportOptions: {},
-      reports: {
-        html: './Coverage'
-      }
-    },
-
-    tsconfig: './tsconfig.json'
+    plugins: [
+      'karma-babel-preprocessor',
+      'karma-chrome-launcher',
+      'karma-jasmine',
+      'karma-mocha-reporter',
+      'karma-typescript'
+    ]
   });
 };

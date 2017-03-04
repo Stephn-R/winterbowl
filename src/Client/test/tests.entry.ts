@@ -14,13 +14,3 @@ testing.TestBed.initTestEnvironment(
   browser.BrowserDynamicTestingModule,
   browser.platformBrowserDynamicTesting()
 );
-
-// Load any tests that exist
-var testContext = require.context('../', true, /\.spec\.ts/);
-
-function requireAll(requireContext) {
-  return requireContext.keys().map(requireContext);
-}
-
-// requires and returns all modules that match
-var modules = requireAll(testContext);

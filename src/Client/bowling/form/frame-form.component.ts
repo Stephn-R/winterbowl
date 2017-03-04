@@ -7,7 +7,7 @@ import { ToasterService } from 'angular2-toaster';
 import { IBowlingFrame } from '../';
 
 const template = require('./frame-form.html');
-const styles = [require('./frame-form.styles')];
+const styles = [require('./frame-form.styles.scss')];
 
 // ────────────────────────────────────────────────────────────────────────────────
 // COMPONENT

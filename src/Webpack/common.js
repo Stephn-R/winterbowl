@@ -20,7 +20,7 @@ module.exports = {
   entry:          {
     main:      [ './Client/main.browser.ts' ],
     polyfills: [ './Client/polyfills.browser.ts' ],
-    vendors:    [ './Client/vendors.browser.ts' ]
+    vendors:   [ './Client/vendors.browser.ts' ]
   },
   output: {
     path: path.resolve(__dirname, '..', 'wwwroot', 'dist'),
@@ -29,7 +29,7 @@ module.exports = {
     sourceMapFilename: '[name].map'
   },
   resolve: {
-    extensions: ['.js', '.ts', '.scss', '.html'],
+    extensions: ['.js', '.ts', '.html'],
     modules: ['node_modules']
   },
   module: {
