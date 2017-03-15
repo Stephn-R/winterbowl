@@ -3,6 +3,7 @@
 
 import { Injectable, OnInit } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
+import 'rxjs/add/operator/toPromise';
 
 import { IBowlingFrame } from './bowling.component';
 
